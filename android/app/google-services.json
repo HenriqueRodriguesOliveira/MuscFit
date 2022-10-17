@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "210848918743",
+    "project_id": "muscfit",
+    "storage_bucket": "muscfit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:210848918743:android:35d59b77683bef822d5492",
+        "android_client_info": {
+          "package_name": "com.example.academia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "210848918743-j5ngs0umpkguppqfufgcs64lh1e5pnf2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEEstY94MgPDBqYO30aAU85e2DZWMQQvI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "210848918743-j5ngs0umpkguppqfufgcs64lh1e5pnf2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
