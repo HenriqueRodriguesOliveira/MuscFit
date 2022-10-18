@@ -13,19 +13,28 @@ class CategoryCard extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: Colors.amber[800],
+          gradient: const LinearGradient(
+              begin: Alignment.bottomCenter,
+              end: Alignment.topRight,
+              colors: [
+                Color.fromARGB(214, 211, 239, 26),
+                Color.fromARGB(255, 208, 255, 0)
+              ]),
         ),
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Row(
           children: [
             Image.asset(
               iconImagePath,
               height: 40,
             ),
-            SizedBox(width: 10),
+            const SizedBox(width: 10),
             Text(
               categoryName,
-              style: TextStyle(color: Colors.white),
+              style: const TextStyle(
+                  color: Colors.black87,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'OpenSans'),
             ),
           ],
         ),

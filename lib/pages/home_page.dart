@@ -1,6 +1,5 @@
 import 'package:academia/components/category_card.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -12,12 +11,12 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black87,
+      backgroundColor: const Color.fromARGB(255, 24, 24, 24),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 20),
         child: GNav(
           color: Colors.white,
-          activeColor: Colors.amber[800],
+          activeColor: const Color.fromARGB(255, 218, 218, 217),
           tabBackgroundColor: Colors.grey.shade800,
           padding: const EdgeInsets.all(16),
           gap: 8,
@@ -54,9 +53,9 @@ class HomePage extends StatelessWidget {
                   //name
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
+                    children: const [
                       Text(
-                        'Olá,',
+                        'Bem vindo,',
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
@@ -77,86 +76,86 @@ class HomePage extends StatelessWidget {
 
                   //profile picture
                   Container(
-                    padding: EdgeInsets.all(12),
+                    padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
                         color: Colors.grey[800],
                         borderRadius: BorderRadius.circular(12)),
-                    child: Icon(
+                    child: const Icon(
                       Icons.person,
-                      color: Colors.amber[800],
+                      color: Color.fromARGB(255, 206, 206, 206),
                     ),
                   )
                 ],
               ),
             ),
 
-            SizedBox(height: 25),
+            const SizedBox(height: 25),
 
             //Card
-
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
-              child: Container(
-                padding: EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                    color: Colors.amber[800],
-                    borderRadius: BorderRadius.circular(12)),
-                child: Row(
-                  children: [
-                    // animation
-                    Container(
-                      height: 100,
-                      width: 100,
-                      child: Image.asset('assets/halteres.png'),
+            Card(
+              clipBehavior: Clip.antiAlias,
+              margin: const EdgeInsets.symmetric(horizontal: 20),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  Ink.image(
+                    image: const NetworkImage(
+                        'https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
+                    height: 139,
+                    width: 400,
+                    fit: BoxFit.cover,
+                    child: InkWell(
+                      onTap: () {},
                     ),
-
-                    SizedBox(width: 20),
-
-                    // texto + botao
-                    Expanded(
+                  ),
+                  Positioned(
+                    bottom: -1,
+                    left: 0,
+                    right: 0,
+                    child: Container(
+                      height: 120,
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              begin: Alignment.bottomCenter,
+                              end: Alignment.topCenter,
+                              colors: [
+                            Colors.black.withOpacity(0.7),
+                            Colors.transparent
+                          ])),
+                    ),
+                  ),
+                  Positioned(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 10, top: 70),
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            'Não montou sua ficha?',
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: const [
+                          Text(
+                            'O que treinar hoje?',
                             style: TextStyle(
-                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
                                 fontSize: 16,
-                                color: Colors.black),
+                                fontWeight: FontWeight.bold),
                           ),
-                          SizedBox(height: 8),
-                          const Text(
-                            'Monte a sua ficha e organize seu treino da semana.',
+                          Text(
+                            'Monte o seu plano de treino e alimentar!',
                             style: TextStyle(
-                              fontSize: 14,
-                            ),
+                                color: Colors.white, fontSize: 16, height: 1.2),
                           ),
-                          SizedBox(height: 8),
-                          Container(
-                            padding: EdgeInsets.all(12),
-                            decoration: BoxDecoration(
-                              color: Colors.grey.shade800,
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: Center(
-                              child: Text(
-                                'Planejar Rotina',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ),
-                          )
                         ],
                       ),
-                    )
-                  ],
-                ),
+                    ),
+                  ),
+                ],
               ),
             ),
 
-            SizedBox(height: 25),
+            const SizedBox(height: 25),
             // search bar
+            /*
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: Container(
@@ -176,40 +175,53 @@ class HomePage extends StatelessWidget {
                       hintStyle: TextStyle(color: Colors.white)),
                 ),
               ),
+            ),*/
+            const Padding(
+              padding: EdgeInsets.only(right: 170),
+              child: Text(
+                'Lista de Modalidades',
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    color: Colors.white),
+              ),
             ),
 
-            SizedBox(height: 25),
+            const SizedBox(height: 12),
 
             // horizontal lisview
-            Container(
+            SizedBox(
               height: 80,
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
                   CategoryCard(
-                      iconImagePath: 'assets/fita.png', categoryName: 'Teste'),
+                    iconImagePath: 'assets/fita.png',
+                    categoryName: 'Evolução',
+                  ),
                   CategoryCard(
                       iconImagePath: 'assets/haltere.png',
-                      categoryName: 'Teste'),
+                      categoryName: 'Treino'),
                   CategoryCard(
-                      iconImagePath: 'assets/fruta.png', categoryName: 'Teste'),
+                      iconImagePath: 'assets/fruta.png',
+                      categoryName: 'Alimentação'),
                   CategoryCard(
                       iconImagePath: 'assets/calendario.png',
-                      categoryName: 'Teste'),
+                      categoryName: 'Concluído'),
                 ],
               ),
             ),
 
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             //Lista Card
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+                children: const [
                   Text(
-                    'Lista de Modalidades',
+                    'Categorias de treinos',
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
@@ -220,14 +232,35 @@ class HomePage extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
-                        color: Colors.amber[800]),
+                        color: Colors.grey),
                   )
                 ],
               ),
             ),
-            SizedBox(height: 25),
+            const SizedBox(height: 12),
 
-            MenuCard()
+            Expanded(
+                child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                MenuCard(
+                  imageCard: 'assets/halteres.png',
+                  nomeCard: 'Treino - A',
+                ),
+                MenuCard(
+                  imageCard: 'assets/peso.png',
+                  nomeCard: 'Treino - B',
+                ),
+                MenuCard(
+                  imageCard: 'assets/roda.png',
+                  nomeCard: 'Treino - C',
+                ),
+                MenuCard(
+                  imageCard: 'assets/halteres.png',
+                  nomeCard: 'Treino - D',
+                ),
+              ],
+            ))
           ],
         ),
       ),

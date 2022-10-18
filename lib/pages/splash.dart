@@ -36,7 +36,7 @@ class Splash extends StatelessWidget {
                   child: Text(
                     'Eleve o seu Corpo ao Limite!',
                     style: TextStyle(
-                      color: Color.fromARGB(255, 255, 174, 1),
+                      color: Colors.white,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'OpenSans',
                       fontSize: 27,
@@ -52,7 +52,7 @@ class Splash extends StatelessWidget {
                 ),
               ),
               const Padding(
-                padding: EdgeInsets.only(left: 25),
+                padding: EdgeInsets.only(left: 21),
                 child: Text(
                   'Monte o seu treino, organize o seu dia a dia e muito mais...',
                   style: TextStyle(
@@ -66,7 +66,7 @@ class Splash extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.amber[700],
+                  backgroundColor: Color.fromARGB(255, 176, 251, 2),
                   fixedSize: const Size(275, 50),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50),
@@ -100,7 +100,7 @@ class Splash extends StatelessWidget {
                     child: const Text(
                       'Cadastre-se',
                       style: TextStyle(
-                        color: Colors.amber,
+                        color: Colors.white,
                         fontFamily: 'QuickSand',
                         fontWeight: FontWeight.bold,
                       ),

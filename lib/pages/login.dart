@@ -34,7 +34,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: Color.fromARGB(255, 24, 24, 24),
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
@@ -57,7 +57,8 @@ class _LoginState extends State<Login> {
                           borderRadius: BorderRadius.circular(12),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(color: Colors.orange),
+                          borderSide: const BorderSide(
+                              color: Color.fromARGB(255, 136, 195, 0)),
                           borderRadius: BorderRadius.circular(12),
                         ),
                         hintText: 'Email',
@@ -79,10 +80,11 @@ class _LoginState extends State<Login> {
                           borderRadius: BorderRadius.circular(12),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(color: Colors.orange),
+                          borderSide: const BorderSide(
+                              color: Color.fromARGB(255, 136, 195, 0)),
                           borderRadius: BorderRadius.circular(12),
                         ),
-                        hintText: 'Password',
+                        hintText: 'Senha',
                         fillColor: Colors.grey[200],
                         filled: true),
                   ),
@@ -105,7 +107,7 @@ class _LoginState extends State<Login> {
                     },
                     child: const Text(
                       'Esqueceu a senha?',
-                      style: TextStyle(color: Colors.black45),
+                      style: TextStyle(color: Colors.grey),
                     ),
                   ),
                 ),
@@ -120,14 +122,14 @@ class _LoginState extends State<Login> {
                     child: Container(
                         padding: EdgeInsets.all(20),
                         decoration: BoxDecoration(
-                          color: Colors.amber[500],
+                          color: Color.fromARGB(255, 154, 220, 1),
                           borderRadius: BorderRadius.circular(12),
                         ),
                         child: const Center(
                           child: Text(
                             'Acessar',
                             style: TextStyle(
-                              color: Colors.black54,
+                              color: Color.fromARGB(255, 81, 81, 81),
                               fontWeight: FontWeight.bold,
                               fontSize: 18,
                             ),
@@ -143,12 +145,12 @@ class _LoginState extends State<Login> {
                   children: [
                     const Text(
                       'Não possui uma conta? ',
-                      style: TextStyle(color: Colors.black54),
+                      style: TextStyle(color: Colors.grey),
                     ),
                     GestureDetector(
                       onTap: widget.showRegisterPage,
                       child: Text('Registre agora',
-                          style: TextStyle(color: Colors.amber[600])),
+                          style: TextStyle(color: Colors.green.shade700)),
                     )
                   ],
                 )

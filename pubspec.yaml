@@ -69,7 +69,9 @@ flutter:
   - assets/background.jpg
   - assets/logo.png
   - assets/card1.jpg
-  - assets/user.png
+  - assets/esteira.png
+  - assets/peso.png
+  - assets/roda.png
   - assets/calendario.png
   - assets/fita.png
   - assets/fruta.png
